@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Chu vi hình tròn</title>
+</head>
+<body>
+<p> Nhập bán kính hình tròn </p>
+<input type="text" id="bankinh" placeholder="Nhập bán kính (cm)">
+<button onclick="nhap()">Nhập </button>
+<p id="output"> </p>
+<script>
+    function nhap() {
+
+        let radius = document.getElementById("bankinh").value;
+        let r = parseInt(radius);
+        let t = 3.14;
+        let S = (r * 2 )* t;
+        document.getElementById('output').innerText = " Chu vi hình tròn là: " + S;
+    }
+</script>
+
+</body>
+</html>

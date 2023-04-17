@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tính Điểm Trung Bình </title>
+</head>
+<body>
+<p> Nhập điểm vật lý</p>
+<input id="inputLy" type="text" placeholder="Nhập Điểm lý"> <br>
+<p> Nhập điểm hóa học</p>
+<input id="inputHoa" type="text" placeholder="Nhập Điểm Hóa"> <br>
+<p>Nhập điểm sinh học</p>
+<input id="inputSinh" type="text" placeholder="Nhập Điểm Sinh"> <br>
+<button onclick="nhap()"> Nhập </button>
+<p id="diemtb">  </p>
+
+<script>
+    function nhap(){
+        let diemly = document.getElementById("inputLy").value;
+        let ly = parseInt(diemly)
+        let diemhoa = document.getElementById("inputHoa").value;
+        let hoa = parseInt(diemhoa)
+        let diemsinh= document.getElementById("inputSinh").value;
+        let sinh = parseInt(diemsinh)
+        let tb = (ly + hoa + sinh)/3
+        // document.write("Điểm trung bình là :" +tb )
+        document.getElementById("diemtb").innerText= "Điểm trung bình là :" +tb;
+
+    }
+
+</script>
+
+</body>
+</html>

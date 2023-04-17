@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi Tiền tệ</title>
+</head>
+<body>
+<form>
+    <table >
+        <tr>
+            <th> Amount</th>
+            <th></th>
+            <th> Form Currency </th>
+            <th></th>
+            <th> To Currency </th>
+        </tr>
+        <tr>
+            <td> <input type="text" size="5px" id="input"> </td>
+            <td></td>
+            <td>
+                <select  >
+                    <option id="vn">Vietnam</option>
+                    <option id="us">USD</option>
+                    <option id="eu">EUR </option>
+                    <option id="gb">GBP</option>
+                </select>
+            </td>
+            <td></td>
+            <td>
+                <select>
+                    <option id="vn2">Vietnam</option>
+                    <option id="us2">USD</option>
+                    <option id="eu2">EUR </option>
+                    <option id="gb2">GBP</option>
+                </select>
+            </td>
+            <td> <input type="button" value="Convert" onclick="nhap()"></td>
+
+        </tr>
+    </table>
+    <p id="output"> </p>
+</form>
+<script>
+    function nhap() {
+        let i = document.getElementById("input").value;
+        let tien = parseInt(i);
+        let vn =document.getElementById('vn');
+        let us =document.getElementById('us');
+        let eu = document.getElementById('eu');
+        let gb = document.getElementById('gb');
+        let vn2 =document.getElementById('vn2');
+        let us2=document.getElementById('us2');
+        let eu2 = document.getElementById('eu2');
+        let gb2 = document.getElementById('gb2');
+       tien = vn = us2 = tien * 2;
+        document.getElementById("output").innerText = "Result:" + tien
+        const USDollar = new Intl.NumberFormat('-US', {
+            style: 'currency',
+            currency: 'USD',
+
+    }
+</script>
+
+</body>
+</html>
