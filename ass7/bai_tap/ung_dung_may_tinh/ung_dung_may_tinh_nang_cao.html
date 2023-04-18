@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính </title>
+</head>
+<body>
+<div class="container-grid">
+    <div id="result"></div>
+    <div class="calculate">
+        <div class="number">
+            <button class="btn" value="7">7</button>
+            <button class="btn" value="8">8</button>
+            <button class="btn" value="9">9</button>
+            <button class="btn" value="4">4</button>
+            <button class="btn" value="5">5</button>
+            <button class="btn" value="6">6</button>
+            <button class="btn" value="1">1</button>
+            <button class="btn" value="2">2</button>
+            <button class="btn" value="3">3</button>
+            <button class="btn" value="0">0</button>
+            <button class="btn" value=".">.</button>
+        </div>
+        <div class="operation">
+            <button class="btn" onclick="del()">DEL</button>
+            <button class="btn" onclick="ac()">AC</button>
+            <button class="btn" value="+">+</button>
+            <button class="btn" value="-">-</button>
+            <button class="btn" value="*">*</button>
+            <button class="btn" value="/">/</button>
+            <button class="btn" onclick="equal()">=</button>
+
+        </div>
+    </div>
+</div>
+<script>
+    const numbers = document.getElementsByClassName('btn');
+    const result = document.getElementById('result');
+
+    for (let number of numbers) {
+        number.addEventListener('click', function () {
+            result.innerHTML += this.value
+        });
+    }
+    function equal() {
+        let res = result.innerText
+        let outputs = eval(res)
+        result.innerHTML = outputs
+
+    }
+    function ac() {
+        result.innerHTML = " "
+
+    }
+    function del() {
+        let res = result.innerHTML
+        result.innerHTML = res.substring(0, res.length - 1)
+
+    }
+
+
+</script>
+
+</body>
+</html>

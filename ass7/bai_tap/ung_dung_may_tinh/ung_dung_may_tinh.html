@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td><b>Caculator</b></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="text" id="toantu1"></td>
+            <td colspan="2"><input type="text" id="toantu2"></td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="Addition(+)" onclick="cong()"></td>
+            <td> <input type="button" value="Addition(-)" onclick="tru()"></td>
+            <td> <input type="button" value="Addition(*)" onclick="nhan()"></td>
+            <td> <input type="button" value="Addition(/)" onclick="chia()"></td>
+
+        </tr>
+    </table>
+    <p id="output"> </p>
+</form>
+<script>
+    function cong() {
+        let input1 = parseInt(document.getElementById('toantu1').value);
+        let input2 = parseInt(document.getElementById('toantu2').value);
+        let output = input1 + input2;
+        document.getElementById('output').innerText = output
+    }
+    function tru() {
+        let input1 = parseInt(document.getElementById('toantu1').value);
+        let input2 = parseInt(document.getElementById('toantu2').value);
+        let output = input1 - input2;
+        document.getElementById('output').innerText = output
+    }
+    function nhan() {
+        let input1 = parseInt(document.getElementById('toantu1').value);
+        let input2 = parseInt(document.getElementById('toantu2').value);
+        let output = input1 * input2;
+        document.getElementById('output').innerText = output
+    }
+    function chia() {
+        let input1 = parseInt(document.getElementById('toantu1').value);
+        let input2 = parseInt(document.getElementById('toantu2').value);
+        let output = input1 / input2;
+        document.getElementById('output').innerText = output
+    }
+
+
+</script>
+</body>
+</html>
