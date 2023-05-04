@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sanpham = +prompt("nhập số sản phẩm bán được ");
+    let giaban = +prompt("nhập giá của sản phẩm ")
+    let thuong = 15/100
+
+    if ( 49> sanpham > 10 ) {
+        thuong = 17/100
+    }else if ( 99>sanpham >50){
+        thuong = 20/100
+    }else if (sanpham>100){
+        thuong = 25/100
+    }
+    let hoahong = (sanpham * giaban * thuong);
+    alert("tiền hoa hồng bạn nhận được là " + hoahong)
+</script>
+
+</body>
+</html>

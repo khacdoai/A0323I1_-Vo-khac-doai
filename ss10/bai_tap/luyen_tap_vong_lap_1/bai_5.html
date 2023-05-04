@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = 0;
+    let m = 1;
+    let f;
+    let tong = 0;
+    for (let i = 1; i <= 20; i++) {
+        document.writeln(n + "<br>");
+        tong = tong + n;
+        f = n + m;
+        n = m;
+        m = f;
+    }
+    document.writeln("Tổng 20 số đầu tiên trong dãy fibonacci là: " + tong + "<br>");
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<input type="button" onclick="nhap()" value="Tính số ngày">
+<p id="output"><b></b></p>
+</body>
+<script>
+    function nhap() {
+        let date = +document.getElementById('input').value;
+        switch (date) {
+            case 1 :
+                document.getElementById('output').innerText = "Tháng " + date + " có 31 ngày";
+                break
+            case 2:
+                document.getElementById('output').innerText = "Tháng " + date + " có 28 hoặc 29 ngày";
+                break
+            case 3:
+                document.getElementById('output').innerText = "Tháng " + date + " có 31 ngày";
+                break;
+            case 4:
+                document.getElementById('output').innerText = "Tháng " + date + " có 30 ngày";
+                break
+            case 5:
+                document.getElementById('output').innerText = "Tháng " + date + " có 31 ngày";
+                break;
+            case 6:
+                document.getElementById('output').innerText = "Tháng " + date + " có 30 ngày";
+                break;
+            case 7:
+                document.getElementById('output').innerText = "Tháng " + date + " có 31 ngày";
+                break
+            case 8:
+                document.getElementById('output').innerText = "Tháng " + date + " có 31 ngày";
+                break
+            case 9:
+                document.getElementById('output').innerText = "Tháng " + date + " có 30 ngày";
+                break
+            case 10:
+                document.getElementById('output').innerText = "Tháng " + date + " có 31 ngày";
+                break;
+            case 11:
+                document.getElementById('output').innerText = "Tháng " + date + " có 30 ngày";
+                break;
+            case 12:
+                document.getElementById('output').innerText = "Tháng " + date + " có 31 ngày";
+                break;
+            default:
+                document.getElementById('output').innerText = "Không phải là tháng"
+
+        }
+    }
+</script>
+</html>

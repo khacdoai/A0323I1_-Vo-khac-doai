@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .maytinh{
+            padding: 10px;
+            border-radius: 1em;
+            height: 380px;
+            width: 400px;
+        }
+        .button{
+            font-family: 'Orbitron', sans-serif;
+            width: 90%;
+            height: 70%;
+            border-radius: 5px;
+            outline: none;
+        }
+        .nhap{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 30px;
+            width: 98%;
+            height: 75%;
+            border-radius: 5px;
+            border: solid black 0.5px;
+        }
+    </style>
+
+</head>
+<body>
+<table class="maytinh">
+    <tr>
+        <td colspan="4"><input type="text " id="result" class="nhap" disabled></td>
+    </tr>
+    <tr>
+        <td><input class="button" type="button" value="1" onclick="display('1')"></td>
+        <td><input class="button" type="button" value="2" onclick="display('2')"></td>
+        <td><input class="button" type="button" value="3" onclick="display('3')"></td>
+        <td><input class="button" type="button" value="+" onclick="display('+')"></td>
+    </tr>
+    <tr>
+        <td><input class="button" type="button" value="4" onclick="display('4')"></td>
+        <td><input class="button" type="button" value="5" onclick="display('5')"></td>
+        <td><input class="button" type="button" value="6" onclick="display('6')"></td>
+        <td><input class="button" type="button" value="-" onclick="display('-')"></td>
+    </tr>
+    <tr>
+        <td><input class="button" type="button" value="7" onclick="display('7')"></td>
+        <td><input class="button" type="button" value="8" onclick="display('8')"></td>
+        <td><input class="button" type="button" value="9" onclick="display('9')"></td>
+        <td><input class="button" type="button" value="*" onclick="display('*')"></td>
+    </tr>
+    <tr>
+        <td><input class="button" type="button" value="C" onclick="clean()"></td>
+        <td><input class="button" type="button" value="0" onclick="display('0')"></td>
+        <td><input class="button" type="button" value="=" onclick="xuat()"></td>
+        <td><input class="button" type="button" value="/" onclick="display('/')"></td>
+    </tr>
+</table>
+<script>
+    function clean() {
+        document.getElementById('result').value = "";
+
+    }
+
+    function display(value) {
+        document.getElementById('result').value += value;
+    }
+
+    function xuat() {
+        let xuat = document.getElementById("result").value;
+        let ve = eval(xuat);
+        document.getElementById("result").value = ve;
+
+    }
+</script>
+
+</body>
+</html>

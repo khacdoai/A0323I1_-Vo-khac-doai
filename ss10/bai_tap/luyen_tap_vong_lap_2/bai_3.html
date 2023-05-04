@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // bai 3,1
+    var n = "*"
+    for (let i = 1; i <= 5; i++) {
+        document.writeln(n + "<br>");
+        n = n + "*";
+    }
+    // bai 3.2
+    for (let i = 5; i >= 0; i--) {
+        for (let j = 1; j <= i; j++) {
+            document.writeln("* ");
+        }
+        document.writeln("<br>");
+    }
+    // bai 3.3
+    let i;
+    let j;
+    for (i = 0; i < 5; i++) {
+        for (let z = 4; z > i; z--) {
+            document.writeln("&nbsp&nbsp");
+        }
+        for (j = 0; j <= i; j++) {
+            document.writeln("*");
+        }
+        document.writeln("<br>");
+    }
+    // bai 3.4
+    for (i = 5; i >= 0; i--) {
+        for (let k = 5; k > i ; k--){
+            document.writeln("&nbsp&nbsp");
+        }
+        for (j =1 ; j<=i; j++){
+            document.writeln("*");
+        }
+        document.writeln("<br>");
+    }
+
+</script>
+
+</body>
+</html>

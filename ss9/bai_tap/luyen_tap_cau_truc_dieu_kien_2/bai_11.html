@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tn = prompt("thu nhập của bạn là (triệu VNĐ) :")
+    let thue;
+    if (tn <= 5) {
+        thue = tn * (5 / 100);
+        alert("Số thuế bạn phải nộp là " + thue + " Triệu VND");
+    } else if (tn > 5 & tn <= 10) {
+        thue = tn * (10 / 100) - 0.25;
+        alert("Số thuế bạn phải nộp là " + thue + " Triệu VND");
+    } else if (tn > 10 & tn <= 18) {
+        thue = tn * (15 / 100) - 0.75;
+        alert("Số thuế bạn phải nộp là " + thue + " Triệu VND");
+    } else if (tn > 18 & tn <= 32) {
+        thue = tn * (20 / 100) - 1.65;
+        alert("Số thuế bạn phải nộp là " + thue + " Triệu VND");
+    } else if (tn > 32 & tn <= 52) {
+        thue = tn * (25 / 100) - 3.25;
+        alert("Số thuế bạn phải nộp là " + thue + " Triệu VND");
+    } else if (tn > 52 & tn <= 80) {
+        thue = tn * (30 / 100) - 5.85;
+        alert("Số thuế bạn phải nộp là " + thue + " Triệu VND");
+    } else {
+        thue = tn * (35 / 100) - 9.85;
+        alert("Số thuế bạn phải nộp là " + thue + " Triệu VND");
+
+    }
+</script>
+
+</body>
+</html>

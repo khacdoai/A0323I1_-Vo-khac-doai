@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số tiền vay");
+    let t = +prompt("số tháng vay");
+    let lai;
+    let out;
+    if (t > 0 & t <=12 ){
+    for ( let i=1; i <= t; i++) {
+        if (t > 0 & t <= 3) {
+            lai = n * (15 / 100);
+            out = n + lai;
+            n = out;
+        } else if (t > 3 & t <= 6) {
+            lai = n * (17 / 100);
+            out = n + lai;
+            n = out;
+        } else if (t > 6 & t <= 9) {
+            lai = n * (18 / 100);
+            out = n + lai;
+            n = out;
+        } else if (t > 9 & t <= 12) {
+            lai = n * (19 / 100);
+            out = n + lai;
+            n = out;
+        }
+    }
+    alert("số tiền bạn phải trả là: " + out);
+
+    }else {
+        alert("vui lòng nhập đúng số tháng");
+    }
+</script>
+
+</body>
+</html>

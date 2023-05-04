@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let gia;
+    let a = prompt("nhập số điện (kWh)");
+    if (a>0 & a<=50 ){
+        gia = a * 1.678;
+        alert("giá điện của bạn là " + gia);
+    }else if (a>50 & a<=100){
+        gia = a * 1.734;
+        alert("giá điện của bạn là "+ gia);
+    }else if (a>100 & a<=200){
+        gia = a* 2.014;
+        alert("giá điện của bạn là "+ gia);
+    }else {
+        gia = a* 2.536;
+        alert("giá điện cảu bạn là "+ gia);
+    }
+</script>
+
+</body>
+</html>

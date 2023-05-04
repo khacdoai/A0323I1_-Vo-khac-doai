@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    n = 1;
+    tong = 0;
+    for (let i = 1; i < 30;) {
+        // document.writeln(n)
+        if (n % 7 === 0) {
+            document.writeln(n + "<br>");
+            tong = tong + n;
+            n++;
+            i++;
+        } else {
+            n++
+        }
+    }
+    document.writeln("Tổng các 30 số chia hết cho 7 đầu tiên trong số tự nhiên là : " + tong + "<br>")
+</script>
+
+</body>
+</html>

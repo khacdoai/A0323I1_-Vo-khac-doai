@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="choi()" value="chơi">
+<script>
+    function choi() {
+        let n = +prompt("bạn chọn số của chọn từ ");
+        let m = +prompt("đến")
+        var i = Math.floor(Math.random() * (m - n + 1)) + n;
+        alert(i)
+        var k = +prompt("hãy đoán xem");
+        while (k > i || k < i) {
+            if (k > i) {
+                alert("bạn cần chọn số nhỏ hớn ");
+                k = +prompt("chọn lại !");
+            }
+            if (k < i) {
+                alert("bạn cần chọn số lớn hơn ");
+                k = +prompt("chọn lại !");
+            }
+        }
+        if (k === i) {
+            alert("Bạn dã chọn đúng");
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>

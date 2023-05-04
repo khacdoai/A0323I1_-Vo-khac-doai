@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Phướng trình bậc 2 có dạng ax<sup>2</sup> + bx + c = 0 </p>
+<p>nhập a:</p>
+<input type="text" id="a"><br>
+<p>nhập b:</p>
+<input type="text" id="b"><br>
+<p>nhập c:</p>
+<input type="text" id="c"><br>
+<input type="button" onclick="nhap()" value="Nhập">
+<p id="output"></p>
+<script>
+    function nhap() {
+        let denta;
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        let c = +document.getElementById('c').value;
+        denta = b * b - 4 * a * c;
+        if (a !== 0) {
+            if (denta < 0) {
+                document.getElementById('output').innerText = "Phương trình vô nghiệm ";
+            } else if (denta === 0) {
+                let x = -b / 2 * a;
+                document.getElementById('output').innerHTML = "Phương trình có nghiệm kép x1 = x2 = " + x;
+            } else if (denta > 0) {
+                let x1 = (-b + Math.sqrt(denta)) / 2 * a;
+                let x2 = (-b - Math.sqrt(denta)) / 2 * a;
+                document.getElementById('output').innerHTML = "phương trình có 2 nghiệm phân biệt x1 = " + x1 + " x2 = " + x2;
+
+            }
+
+        } else {
+            document.getElementById('output').innerHTML = "không đúng ";
+        }
+
+
+    }
+</script>
+
+</body>
+</html>

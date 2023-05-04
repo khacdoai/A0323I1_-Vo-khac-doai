@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let T;
+    let M = prompt("Số tiền vay;");
+    let r;
+    let n = prompt("Số tháng vay");
+    if (n> 0) {
+        if (n <= 3) {
+            r = 12 / 100;
+            T = M * (1 + r * n);
+            alert("Số tiền bạn phải trả là : " + T);
+        } else if (n > 3 & n <= 6) {
+            r = 14 / 100
+            T = M * (1 + r * n);
+            alert("Số tiền bạn phải trả là : " + T);
+        } else if (n > 6 & n <= 9) {
+            r = 15 / 100
+            T = M * (1 + r * n);
+            alert("Số tiền bạn phải trả là : " + T);
+        } else if (n > 9 & n <= 12) {
+            r = 16 / 100
+            T = M * (1 + r * n);
+            alert("Số tiền bạn phải trả là : " + T);
+        } else {
+            r = 18 / 100
+            T = M * (1 + r * n);
+            alert("Số tiền bạn phải trả là : " + T);
+        }
+    }else {
+        alert("vui lòng nhập đúng số tháng")
+    }
+
+</script>
+
+</body>
+</html>

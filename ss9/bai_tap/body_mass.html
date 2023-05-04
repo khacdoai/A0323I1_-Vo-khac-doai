@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<p> Nhập cân nặng</p>
+<input  id="weight" type="text">
+<p>Nhập chiều cao</p>
+<input id="hight" type="text"><br>
+<input type="button" value="nhập" onclick="nhap()">
+<p id="output"></p>
+<script>
+    function nhap() {
+        let weight= document.getElementById('weight').value;
+
+        let hight= document.getElementById('hight').value;
+        let bmi = weight / (hight^2)
+        if (bmi < 18) {
+            document.getElementById("output").innerText="Underweigh";
+        }else if (bmi < 25.0){
+            document.getElementById("output").innerText="Normal";
+        }else if (bmi < 30.0){
+            document.getElementById("output").innerText="Overweight";
+        } else{
+            document.getElementById("output").innerText="Obese";
+        }
+
+    }
+</script>
+</body>
+</html>
