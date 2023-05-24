@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="index">
+<input type="button" value="Tìm Kiếm" onclick="share()">
+<p id="out"></p>
+<script>
+    function share(){
+        let work = document.getElementById('index').value;
+        let lenguageVN = ['xin chào', 'Tạm biệt', 'Tốt'];
+        let lenguageE = ['Hello', 'Goodbye', 'Good'];
+        let result = "";
+        let index = -1;
+        index = lenguageE.indexOf(work);
+        // for (let i =0 ; i < lenguageE.length; i++){
+        //     if(lenguageE == work){
+        //         index = i;
+        //         break;
+        //     }
+        // }
+        if (index != -1){
+                 result = lenguageVN[index];
+         }else {
+             result = "không tìm thấy";
+        }
+        document.getElementById('out').innerHTML = result;
+    }
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

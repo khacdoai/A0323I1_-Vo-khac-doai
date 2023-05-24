@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("Enter A");
+    let b = prompt("Enter B");
+    let c = prompt("Enter C");
+    checkmin();
+
+    function checkmin() {
+        let min = a;
+        if (min > b) {
+            min = b;
+        } else if (min > c) {
+            min = c;
+        }
+        alert("số nhỏ nhất của ba số " + a + b + c + " là " + min);
+
+    }
+</script>
+</body>
+</html>

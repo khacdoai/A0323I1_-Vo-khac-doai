@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="mycanvas" width=200px height="200px" style="border: 0px solid #d3d3d3"></canvas>
+<p id="hienthi"></p>
+<script>
+    class Rectangle {
+        constructor(dai, rong) {
+            this.dai = dai;
+            this.rong = rong;
+        }
+
+        getDai() {
+            return this.dai
+        }
+
+        getRong() {
+            return this.rong
+        }
+
+        getChuVi() {
+            return (this.dai + this.rong) * 2;
+        }
+
+        getdientich() {
+            return this.dai * this.rong;
+        }
+
+        getcanvas() {
+            let canvas = document.getElementById('mycanvas');
+            let ctx = canvas.getContext('2d');
+            ctx.fillRect(1, 1, this.getDai(), this.getRong());
+        }
+
+        setDai(dai) {
+            this.dai = dai;
+        }
+
+        setRong(rong) {
+            this.rong = rong;
+        }
+
+        toString() {
+            document.getElementById('mycanvas').innerHTML = this.getcanvas();
+            document.getElementById('hienthi').innerHTML = "Chu vi hinh chữ nhật là : " + this.getChuVi() + "<br>" + "Diện tích hình chữ nhật là : " + this.getdientich();
+        }
+
+    }
+
+    let rectangle = new Rectangle(100, 100);
+    // rectangle.toString()
+    rectangle.setDai(100);
+    rectangle.setRong(100);
+    rectangle.toString()
+
+</script>
+</body>
+</html>

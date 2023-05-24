@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border: 2px solid #5f6062;"></canvas>
+<canvas id="myCanvas2" width="200" height="100" style="border: 2px solid #5f6062;"></canvas>
+<canvas id="myCanvas3" width="200" height="100" style="border: 2px solid #5f6062;"></canvas>
+<canvas id="myCanvas4" width="200" height="100" style="border: 2px solid #5f6062;"></canvas>
+<canvas id="myCanvas5" width="200" height="100" style="border: 2px solid #5f6062;"></canvas>
+<script>
+    //vẽ đường thẳng
+    var c = document.getElementById('myCanvas');
+     var ctx = c.getContext("2d");
+     ctx.moveTo(0,0);
+     ctx.lineTo(200,100);
+     ctx.stroke();
+     //vẽ hình tròn
+    var a = document.getElementById('myCanvas2');
+    var ctc = a.getContext("2d");
+    ctc.beginPath();
+    ctc.arc(95,50,40,0,2*Math.PI);
+    ctc.stroke();
+    //hiệu ứng gradient
+    var b = document.getElementById("myCanvas3");
+    var ctb = b.getContext("2d");
+
+    // Create gradient
+    var grd = ctb.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // Fill with gradient
+    ctb.fillStyle = grd;
+    ctb.fillRect(10,10,150,80);
+    // vẽ chữ
+    var z = document.getElementById("myCanvas4");
+    var ctz = z.getContext("2d");
+    ctz.font = "30px Arial";
+    ctz.fillText("Hello World",10,50);
+    // hiệu ứng gradient hình tròn
+    var t = document.getElementById("myCanvas5");
+    var ctt = t.getContext("2d");
+
+    // Create gradient
+    var grd = ctt.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+</script>
+</body>
+</html>

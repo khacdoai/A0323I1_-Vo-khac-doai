@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("Enter a number")
+    factorial();
+    let factorialResult = factorial(number);
+    alert("giai thua của " + number + " là " + factorialResult);
+
+    function factorial() {
+        if (number === 0 || number === 1) {
+            return 1;
+        } else {
+            let result = 1;
+            for (let i = 2; i <= number; i++) {
+                result *= i;
+            }
+            return result;
+
+        }
+
+    }
+</script>
+
+</body>
+</html>

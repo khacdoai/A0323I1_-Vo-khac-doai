@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrCharacter = prompt("Nhập vào một chuỗi kí tự");
+    let character = prompt("Nhập vào 1 kí tự");
+     checkCoincide();
+    alert("Số lần lặp kí tự " + character + "trong chuỗi trên là" + checkCoincide());
+    function checkCoincide() {
+        let coincide = 0;
+        for ( let i=0; i < arrCharacter.length; i++ ){
+            if ( arrCharacter[i] == character ){
+                coincide += 1;
+            }else {
+                coincide =-1;
+            }
+        }
+        return coincide;
+
+    }
+</script>
+
+</body>
+</html>

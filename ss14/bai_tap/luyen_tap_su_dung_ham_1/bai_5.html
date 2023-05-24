@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let array = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+    let array2 = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+    let star = prompt("Enter a star");
+    access(star);
+    function access() {
+        for (let i=0; i<array.length;i++){
+            if(array[i] === star){
+                alert("vị trí tương ứng của " + array[i] + " là " + array2[i]);
+            }else {
+                alert("không tìm thấy chòm sao");
+            }
+            return;
+        }
+    }
+
+</script>
+</body>
+</html>

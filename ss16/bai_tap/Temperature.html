@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> Chuyển đổi độ C sang độ F và và độ Kenvin</h3>
+<input type="text" id="nhapdoC" placeholder="nhập độ C">
+<button onclick="temperature.toString()">Chuyển đổi</button>
+<p id="ketqua"></p>
+<script>
+        class Temperature {
+            constructor(doC) {
+                this.doC = doC
+            }
+            getdoC(){
+                return this.doC;
+            }
+            getDoF(){
+                return 9/5 * this.getdoC() + 32;
+            }
+            getDoKenvin(){
+                return  5/9 * (this.getDoF() - 32) + 273.15;
+            }
+            toString(){
+                document.getElementById('ketqua').innerHTML = "Độ F là : " + this.getDoF() + "<br>" + "Độ kenvin là : " + this.getDoKenvin();
+
+            }
+        }
+   let temperature = new Temperature(25)
+    console.log(temperature.toString())
+
+</script>
+</body>
+</html>

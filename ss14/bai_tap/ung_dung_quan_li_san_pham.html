@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add New Product</h3>
+<input type="text" id="product" placeholder="Enter Product">
+<input type="button" value="Add" onclick="addProduct()">
+<h3>Display All Product</h3>
+<p id="result"></p>
+<script>
+    let productList = ["Sony Xperia", "Samsum Galaxy", "Nokia 6"];
+    display(productList);
+
+    function addProduct() {
+        let newProduct = document.getElementById("product").value;
+        if (newProduct != "") {
+            productList.push(newProduct);
+        } else {
+            alert("Please Enter product name")
+        }
+        document.getElementById("product").value = "";
+        display();
+
+    }
+    function editProduct(index) {
+        let editProduct = prompt("Edit product ", productList[index] );
+        productList[index] = editProduct;
+        display();
+
+
+    }
+    function deleteProduct(index) {
+        let delet = confirm("Do you want to delete the product?" + productList[index])
+        if(delet){
+            productList.splice(index,1);
+        }
+        display();
+
+    }
+
+    function display() {
+        let tableString = '<table boder=1>\n' +
+            '<tr>\n' +
+            '<th>Product Name</th>' +
+            '<th></th>' +
+            '<th></th>' +
+            '<th>Products </th>' +
+            '</tr>';
+        for (let i = 1 ; i<productList.length; i++){
+            tableString += '<tr>\n'+
+                '<td>' + productList[i] + ' </td>\n' +
+                '<td><button onclick="editProduct(' + i +' )">Edit</button>  </td>\n' +
+                '<td><button onclick="deleteProduct(' + i +')">Delete</button>  </td>\n' +
+                    '</tr>';
+
+        }
+        tableString +='</table>';
+        document.getElementById('result').innerHTML = tableString
+
+    }
+</script>
+
+
+</body>
+</html>

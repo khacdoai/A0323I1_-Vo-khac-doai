@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function isprime(number) {
+        for (let i = 2; i < number; i++) {
+            if (number < 2) {
+                return false;
+            } else {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    }
+    let arr = []
+    for ( let i=1 ; i<= 1000 ; i++){
+         arr.push(i);
+    }
+        for (let i= 0; i<arr.length; i++){
+            if (isprime(arr[i]) == true) {
+                document.write(arr[i] + ",");
+
+            }
+        }
+
+</script>
+
+</body>
+</html>
