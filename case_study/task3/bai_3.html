@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    maxFraction(numerators,denominators);
+
+    function maxFraction(arrA, arrB) {
+        let mangSo = [];
+        let max = arrA[0] / arrB[0];
+        for (let i = 0; i < arrA.length; i++) {
+            let num;
+            for (let j = 0; j < arrB.length; j++) {
+                num = arrA[i] / arrB[j];
+                mangSo.push(num);
+                if (num > max) {
+                    max = num;
+                }
+
+            }
+        }
+        let cout = 0;
+        for (z = 0; z < mangSo.length; z++) {
+            if (mangSo[z] === max) {
+                cout++;
+            }
+        }
+        console.log("phan số lớn nhất là : " + max + "Có chỉ số là : " + cout);
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

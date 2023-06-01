@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let wage = prompt("Nhập vào tiền lương của bạn");
+    let tax = wage * (5/100);
+    let sum = 0;
+    if (wage < 7000000){
+        alert("Tiền thuế bạn phải nộp là : " + tax);
+        sum = wage - tax;
+        alert("Thu nhập sau thuế của bạn là: " + sum);
+    }else if (7000000 < wage < 15000000){
+        tax = wage * (10/100);
+        alert("Tiền thuế bạn phải nộp là : " + tax);
+        sum = wage - tax;
+        alert("Thu nhập sau thuế của bạn là: " + sum);
+    }else if (wage >= 15000000){
+        tax = wage * (20/100);
+        alert("Tiền thuế bạn phải nộp là : " + tax);
+        sum = wage - tax;
+        alert("Thu nhập sau thuế của bạn là: " + sum);
+    }
+
+
+</script>
+
+</body>
+</html>

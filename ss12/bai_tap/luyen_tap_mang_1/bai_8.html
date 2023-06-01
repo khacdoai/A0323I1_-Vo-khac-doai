@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = []
+    for (let i = 0; i < 10; i++) {
+        let num = prompt("Nhập phần tử thứ " + (i + 1))
+        arr.push(num);
+    }
+    let result = arr.sort(function (a, b) {
+        return b - a;
+
+    })
+    document.writeln("Mảng được sắp xếp theo thứ tự giảm dần " + result)
+</script>
+
+</body>
+</html>

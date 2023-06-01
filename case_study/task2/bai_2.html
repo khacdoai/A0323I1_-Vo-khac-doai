@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let h = prompt();
+    for (let i = 1; i <= h; i++) {
+        for (let z = h; z > i; z--) {
+            document.write('&nbsp&nbsp');
+        }
+        for (let j = 1; j <= i * 2 - 1; j++) {
+            document.write('*');
+        }
+        document.write('<br>')
+    }
+</script>
+
+</body>
+</html>

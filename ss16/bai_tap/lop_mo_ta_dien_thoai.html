@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result">HERE</p>
+<table border="1">
+    <tr>
+        <th>
+            User 1.
+        </th>
+        <th>
+            User 2.
+        </th>
+    </tr>
+    <tr>
+        <td ><textarea id="123"></textarea></td>
+        <td ><textarea id="111"></textarea></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="iphone13.displayPhone()">Kiểm tra tình trạng điện thoại</button>
+        </td>
+        <td>
+            <button onclick="nokia.displayPhone()">Kiểm tra tình trạng điện thoại</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="iphone13.turnPhone()" >Bật / tắt điện thoại</button>
+        </td>
+
+        <td>
+            <button onclick="nokia.turnPhone()">Bật / tắt điện thoại</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="iphone13.soanTinNhan()">Soạn tin nhắn</button>
+        </td>
+
+        <td>
+            <button onclick="nokia.soanTinNhan()">Soạn tin nhắn</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="iphone13.xemTinNhan()">Xem tin nhắn</button>
+        </td>
+        <td>
+            <button onclick="nokia.xemTinNhan()">Xem tin nhắn</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="iphone13.displayBattery()">Kiểm tra tình trạng pin</button>
+        </td>
+        <td>
+            <button onclick="nokia.displayBattery()">Kiểm tra tình trạng pin</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="iphone13.chargingPhone()">Sạc pin</button>
+        </td>
+        <td>
+            <button onclick="nokia.chargingPhone()">Sạc pin</button>
+        </td>
+    </tr>
+</table>
+<script>
+    class Phone {
+        constructor(mobilePhone) {
+            this.mobilePhone = mobilePhone;
+            this.phoneStatus = true;
+            this.phoneBattery = 100;
+            this.tinNhanDangSoan;
+            this.inboxMessage = [];
+            this.sentMessage = [];
+        }
+        getBattery(){
+            return this.phoneBattery;
+        }
+        getSdt(){
+            return this.mobilePhone;
+        }
+        getPhoneStatus(){
+            return this.phoneStatus;
+        }
+        displayBattery(){
+            alert(this.phoneBattery);
+        }
+        displayPhone(){
+            if(this.phoneStatus === true){
+                alert('Điện thoại đang mở')
+            } else if (this.phoneStatus === false){
+                alert('Điện thoại đang tắt')
+            }
+        }
+        turnPhone(){
+            let flag = true;
+            if(this.phoneStatus === true){
+                this.phoneStatus = false;
+                alert('Đã tắt')
+                this.getPhoneStatus();
+            } else if (this.phoneStatus === false){
+                this.phoneStatus = true;
+                alert('Đã bật')
+                this.getPhoneStatus();
+            }
+        }
+
+        chargingPhone(){
+            if(this.phoneBattery === 100){
+                alert('Đã đầy')
+            } else {
+                this.phoneBattery++;
+                alert('Pin đã tăng lên: ' + this.phoneBattery);
+            }
+        }
+
+        soanTinNhan(){
+            this.tinNhanDangSoan = prompt('Nhập vào tin nhắn bạn muốn gửi');
+            let confirmToSend = confirm('Bạn muốn gửi cho ai ?');
+            if(confirmToSend){
+                let reciverNumber = +prompt('Số bạn muốn gửi đến');
+                this.guiTinNhan(this.tinNhanDangSoan, reciverNumber);
+                this.phoneBattery--;
+                alert('Pin bị giảm còn: ' + this.phoneBattery);
+            }
+        }
+
+        guiTinNhan(message, reciverNumber){
+            let locateOfFriend = khoLuaSDT.indexOf(reciverNumber);
+            if (locateOfFriend !== -1 ){
+                alert('Sẽ gửi đến số' + reciverNumber);
+                let userPhone = khoLuaDth[locateOfFriend];
+                userPhone.nhanTinNhan(message + ' từ số ' + this.mobilePhone);
+            }
+        }
+
+        nhanTinNhan(message){
+            this.inboxMessage.push(message);
+        }
+
+        xemTinNhan() {
+            let tatCaTinNhan = "";
+            for (let i = 0; i < this.inboxMessage.length; i++) {
+                tatCaTinNhan += this.inboxMessage[i] + "\n";
+            }
+            let idScreen = "" + this.mobilePhone;
+            document.getElementById(idScreen).value = tatCaTinNhan;
+        }
+        xemTinNhan() {
+            let tatCaTinNhan = "";
+            for (let i = 0; i < this.inboxMessage.length; i++) {
+                tatCaTinNhan += this.inboxMessage[i] + "\n";
+            }
+            let idScreen = "" + this.mobilePhone;
+            document.getElementById(idScreen).value = tatCaTinNhan;
+        }
+        hopThuDen(message){
+
+        }
+    }
+    let iphone13 = new Phone(123);
+    let nokia = new Phone(111);
+
+    let khoLuaDth = [iphone13,nokia];
+    let khoLuaSDT = [iphone13.mobilePhone,nokia.mobilePhone]
+
+</script>
+
+
+</body>
+</html>

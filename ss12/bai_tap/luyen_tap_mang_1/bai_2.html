@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, 4, 14, 5, 20, 25, 22, 40];
+    let arrMax = arr[0];
+    let c = 0
+    for (let i = 0; i<arr.length; i++){
+        if (arr[i] > arrMax){
+            arrMax = arr[i];
+            c = i
+
+        }
+    }
+    alert("Giá trị lơn nhất của mảng là: " + arrMax + "nó nằm ở vị trí thứ " + c + " Trong mảng");
+</script>
+
+</body>
+</html>

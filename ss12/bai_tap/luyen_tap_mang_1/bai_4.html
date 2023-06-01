@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let arr = [];
+ let n = +prompt("Nhập số lượng phần tử của mảng");
+ for (let i = 0; i<n; i++){
+     let element = +prompt("Nhập phần tử thứ " + (i+1) + " : ");
+     arr.push(element);
+ }
+ console.log("Mảng trước khi đảo ngược là: " + arr);
+ arr.reverse();
+ console.log("Mảng sau khi đảo ngược là: " + arr);
+
+</script>
+
+</body>
+</html>

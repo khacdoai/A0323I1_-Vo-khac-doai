@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = []
+    for (let i = 0; i < 10; i++) {
+        let num = prompt("Nhập phần tử thứ " + (i + 1))
+        arr.push(num);
+    }
+    let v = prompt("nhập phần tử cần tìm")
+    let check = false
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == v) {
+            alert(v + " is in the array");
+            check = true
+            break;
+        }
+
+    }
+    if(!check) {
+        alert(v + " is not in the array")
+    }
+</script>
+
+</body>
+</html>

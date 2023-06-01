@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = [];
+    var dem = 0;
+    for(let i = 0; i < 10; i++) {
+        let num = prompt('Nhập vào số nguyên thứ: ' + (i + 1));
+        str.push(num);
+        if(num < 0) {
+            dem++;
+        }
+    }
+    document.writeln('10 số nguyên trong mảng là: '+ str + '<br>');
+    document.writeln('Có '+ dem + ' số nguyên âm trong mảng');
+</script>
+
+</body>
+</html>

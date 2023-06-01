@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str1 = prompt();
+    var str2 = prompt();
+    var arr1 = str1.split(' ');
+    var arr2 = str2.split(' ');
+    var flag = true;
+    var dem = 0;
+    for (let i = 0; i < str1.length; i++) {
+        if(str1[i] !== str2[i] ){
+            flag = false;
+            alert('2 chuỗi ko giống nhau');
+            break;
+        }
+        if(flag && str1.length == str2.length){
+            alert('2 chuỗi giống nhau');
+            break;
+        }
+    }
+</script>
+</body>
+</html>
