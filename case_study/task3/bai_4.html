@@ -5,79 +5,101 @@
     <title>Title</title>
 </head>
 <body>
-<table border="1">
-    <th>
-    <td>nước uống</td>
-    <td>Đơn Giá</td>
-    </th>
+<table border="1" style="border-collapse: collapse">
     <tr>
-        <td>1</td>
-        <td>Cafe</td>
-        <td>15.000</td>
-
-
+        <th colspan="2">Menu</th>
     </tr>
     <tr>
-        <td>2</td>
-        <td>Cam vắt</td>
-        <td>17.000</td>
+        <th>Drinks</th>
+        <th>Price</th>
     </tr>
     <tr>
-        <td>3</td>
-        <td>Nước ép cà rốt</td>
-        <td>17.000</td>
+        <td onclick="order(1)">1. Cafe</td>
+        <td>12000</td>
     </tr>
     <tr>
-        <td>4</td>
-        <td>Nước ép cà chua</td>
-        <td>17.000</td>
+        <td onclick="order(2)">2. Cam vat</td>
+        <td>20000</td>
     </tr>
     <tr>
-        <td>5</td>
-        <td>Nước lọc</td>
-        <td>5.000</td>
+        <td onclick="order(3)">3. Ep carrot</td>
+        <td>20000</td>
     </tr>
     <tr>
-        <td>6</td>
-        <td>Nước dừa</td>
-        <td>12.000</td>
+        <td onclick="order(4)">4. Ep Ca chua</td>
+        <td>25000</td>
     </tr>
     <tr>
-        <td>7</td>
-        <td></td>
-        <td>Thoát</td>
+        <td onclick="order(5)">5. Nuoc suoi</td>
+        <td>10000</td>
+    </tr>
+    <tr>
+        <td onclick="order(6)">6. Nuoc Dua</td>
+        <td>30000</td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <button onclick="selectDrink()">Select Drinks</button>
+        </th>
     </tr>
 </table>
-<button onclick="Chondouong()">Chọn đồ uống</button>
-<p id="hienthi"></p>
+<p id="bill"></p>
 <script>
-    function Chondouong() {
-        // let arrDoUong = ["cafe", "camvat", "nuocepcarot", "nuocepcachua","nuocloc","nuocdua","thoat"];
-        let arrThuTu = [1, 2, 3, 4, 5, 6, 7];
-        let arrDongia = [15000, 17000, 17000, 17000, 5000, 12000,];
-        let num = 0;
-        let sum = 0;
-        let a;
+    function selectDrink() {
+        let price;
+        let amount;
+        let flag = true;
+        let listOrder = '';
+        let bill = 0;
         do {
-            a = prompt("Chọn đồ uống bạn muốn");
-        } while (a != 7 )
-        {
-            for (let i = 0; i < arrThuTu.length-1; i++) {
-                if (a === arrThuTu[i]) {
-                    for (let j = i; j < arrDongia.length; j++) {
-                        sum += arrDongia[j];
-                        alert("đơn giá bạn phải trả là :" + arrDongia[i] + "Tổng tiền phải trả là " + sum);
-                        return sum;
-
-                    }
-                }
+            let choose = +prompt('Chon mon ban muon');
+            if(choose == 1){
+                price = 12000;
+                amount = +prompt('Số lượng');
+                alert('bill của bạn là: ' + price*amount);
+                listOrder += ' Cafe ';
+                bill += price*amount;
             }
-
-        }
-        document.getElementById("Tổng số tiền bạn phải trả là :");
-
+            if(choose == 2){
+                price = 20000;
+                amount = +prompt('Số lượng');
+                alert('bill của bạn là: ' + price*amount);
+                listOrder += ' Cam Vắt ';
+                bill += price*amount;
+            }
+            if(choose == 3){
+                price = 20000;
+                amount = +prompt('Số lượng');
+                alert('bill của bạn là: ' + price*amount);
+                listOrder += ' Ép carrot ';
+                bill += price*amount;
+            }if(choose == 4){
+                price = 25000;
+                amount = +prompt('Số lượng');
+                alert('bill của bạn là: ' + price*amount);
+                listOrder += ' Ép cà chua ';
+                bill += price*amount;
+            }if(choose == 5){
+                price = 10000
+                amount = +prompt('Số lượng');
+                alert('bill của bạn là: ' + price*amount);
+                listOrder += ' Nước suối ' ;
+                bill += price*amount;
+            }if(choose == 6){
+                price = 30000;
+                amount = +prompt('Số lượng');
+                alert('bill của bạn là: ' + price*amount);
+                listOrder += ' Nước dừa ';
+                bill += price*amount;
+            }
+            if(choose == 7){
+                flag = false;
+            }
+        } while (flag);
+        alert('Bạn đã hủy chương trình đặt đồ uống');
+        document.getElementById('bill').innerText = 'bạn đã order: ' + listOrder + bill;
     }
 </script>
-
 </body>
+
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhập');
+    fixString(a);
+    function fixString(str) {
+        let fixedStr = [];
+
+        let  deleteSpace = str.trim();
+        let arr = deleteSpace.split(' ');
+        for (let i = 0; i < arr.length ; i++) {
+            if(arr[i] !== '' ){
+                fixedStr.push(arr[i]);
+            }
+        }
+
+        fixedStr = fixedStr.join(' ').split('');
+
+        for (let j = 0; j < fixedStr.length; j++){
+            if(j === 0 || fixedStr[j-1] === ' ' ){
+                fixedStr[j] = fixedStr[j].toLocaleUpperCase();
+            } else {
+                fixedStr[j] = fixedStr[j].toLocaleLowerCase();
+            }
+        }
+
+
+        console.log(fixedStr.join(''));
+
+    }
+
+</script>
+</body>
+</html>
