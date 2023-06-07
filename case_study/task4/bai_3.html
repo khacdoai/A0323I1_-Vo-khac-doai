@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = prompt("Nhập chuỗi 1");
+    let s2 = prompt("Nhập chuỗi 2");
+    commonCharacterCount(s1,s2)
+    function commonCharacterCount(s1,s2) {
+        let   arr3 = []
+        for (let i =0 ; i< s1.length; i++){
+            let char = s1.charAt(i);
+            for (let j =0;j<s2.length;j++){
+                let char2 = s2.charAt(j);
+                if (char[i] === char2[j]){
+                    arr3.push(char2[j])
+                    char2.splice(char2[j])
+                }
+
+            }
+
+        }
+        console.log(arr3);
+
+    }
+</script>
+</body>
+</html>

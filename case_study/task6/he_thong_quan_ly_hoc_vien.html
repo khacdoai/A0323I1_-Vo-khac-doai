@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="addnew()" value="Thêm mới học viên">
+<input type="button" onclick="fixstudent()" value="Sửa học viên">
+<input type="button" onclick="deletestudent()" value="Xóa học viên">
+<p id="result"></p>
+<script>
+    class student {
+        constructor(id,name,clas,email,birthday,module ) {
+            this.id = id;
+            this.name = name;
+            this.clas = clas;
+            this.email = email;
+            this.birthday = birthday;
+            this.module = module;
+        }
+        getId(){
+            return this.id;
+        }
+        getName(){
+            return this.name;
+        }
+        getClas(){
+            return this.clas;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getBirthday(){
+            return this.birthday;
+        }
+        getModule(){
+            return this.module;
+        }
+        setId(id){
+             this.id = id;
+        }
+        setName(name){
+            this.name = name;
+        }
+        setClas(clas){
+            this.clas = clas;
+        }
+        setEmail(email){
+            this.email = email;
+        }
+        setBirthday(birthday){
+            this.birthday = birthday;
+        }
+        setModule(module){
+            this.module = module;
+        }
+    }
+    let studenList = [];
+    let student1 = new student(1,"đạt","a0323I1","vkdat@gmail.com","27/7/2003",1)
+    let srudent2 = new student(1,"đạt1","a0323I1","vkdat@gmail.com","27/7/2003",1)
+    let srudent3 = new student(1,"đạt2","a0323I1","vkdat@gmail.com","27/7/2003",1)
+    studenList.push(student1,srudent2,srudent3);
+    display(studenList)
+    
+    function addnew() {
+        let id = prompt("Nhập id học sinh");
+        let name = prompt("Nhập tên học sinh");
+        let clas = prompt("Nhập lớp");
+        let email = prompt("Nhập gamil");
+        let birthday = prompt("Nhập ngày sinh");
+        let newstudent = new student(id,name,clas,email,birthday);
+        studenList.push(newstudent);
+        display(studenList)
+
+    }
+    function deletestudent() {
+        let id = prompt("Nhập id cần xóa")
+        for (let i = 0; i<studenList.length; i++){
+            if(studenList[i].getId() === id ){
+                let conf = confirm("bạn có muốn xóa học sinh " + studenList[i].getId())
+                if (conf){
+                    studenList.splice(i,1)
+                }else {
+                    alert("Không có mã sinh viên");
+                }
+            }
+        }
+        display(studenList);
+
+    }
+    function fixstudent() {
+        let c = true
+        let id = prompt("Nhập id cần sửa")
+        for (let i = 0; i<studenList.length; i++){
+            if(studenList[i].getId() === id ){
+                let id = prompt("Nhập id học sinh");
+                let name = prompt("Nhập tên học sinh");
+                let clas = prompt("Nhập lớp");
+                let email = prompt("Nhập gamil");
+                let birthday = prompt("Nhập ngày sinh");
+                studenList[i].setId(id);
+                studenList[i].setName(name);
+                studenList[i].setClas(clas);
+                studenList[i].setEmail(email);
+                studenList[i].setBirthday(birthday);
+                c = false;
+            }
+        }
+        if (c == true) {
+            alert("không tìm thấy mã sv");
+        }
+        display(studenList)
+
+    }
+    function display(list) {
+        let tableString = '<table border="1px">\n' +
+            '    <tr>\n' +
+            '    <td>Mã Học Viên</td>\n' +
+            '    <td>Tên</td>\n' +
+            '    <td>Lớp</td>\n' +
+            '    <td>Email</td>\n' +
+            '    <td>Ngày sinh</td>\n' +
+            '    </tr>'
+        for (let i = 0; i< list.length;i++){
+                tableString += '<tr>\n' +
+                    '        <td>'+ list[i].getId() +'</td>\n' +
+                    '        <td>'+list[i].getName()+'</td>\n' +
+                    '        <td>'+list[i].getClas()+'</td>\n' +
+                    '        <td>'+list[i].getEmail()+'</td>\n' +
+                    '        <td>'+list[i].getBirthday()+'</td>\n' +
+                    '    </tr>'
+        }
+        tableString += '</table>'
+        document.getElementById("result").innerHTML = tableString
+
+    }
+</script>
+</body>
+</html>

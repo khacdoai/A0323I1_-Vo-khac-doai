@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số dòng")
+    let m = +prompt("Nhập số cột")
+    let arr = new Array(n);
+    let num = 1;
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++){
+        arr[i] = new Array(m)
+        for (let j = 0; j<arr[i].length; j++){
+            arr[i][j] = num;
+            num++;
+        }
+
+    }
+    let max = arr[0][0];
+    let min = arr[0][1];
+    for (let i = 0; i<arr.length; i++){
+        for (let j = 0; j<arr[i].length; j++){
+            if (arr[i][j] > max){
+               max =  arr[i][j];
+            }else  if (arr[i][j] < min){
+                min = arr[i][j];
+            }
+        }
+    }
+    document.writeln("số lớn nhất của mảng 2 chiều :" + max + "<br>");
+    document.writeln("số Nhỏ nhất của mảng 2 chiều :" + min);
+
+</script>
+</body>
+</html>

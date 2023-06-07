@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s = prompt("Nhập chuỗi kí tự")
+    differentSymbolsNaive(s)
+    alert(differentSymbolsNaive(s))
+    function differentSymbolsNaive(s) {
+        var  charCounts ={}
+        for (let i = 0; i < s.length ; i++){
+            let char = s.charAt(i)
+            if (charCounts[char] === undefined){
+                charCounts[char] = 1
+            }else {
+                charCounts[char]++
+            }
+        }
+        return Object.keys(charCounts).length
+
+    }
+
+</script>
+
+</body>
+</html>

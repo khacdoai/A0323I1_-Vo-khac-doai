@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số dòng")
+    let m = +prompt("Nhập số cột")
+    let arr = new Array(n);
+    let num = 1;
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++){
+        arr[i] = new Array(m)
+        for (let j = 0; j<arr[i].length; j++){
+            arr[i][j] = num;
+            if (isPrime(arr[i][j]) ){
+                console.log(arr[i][j]);
+                sum++
+            }
+            num++;
+        }
+
+    }
+
+
+    console.log(arr);
+    console.log(sum);
+
+    function isPrime(num) {
+        let flag = true;
+        if (num < 2) {
+            flag = false;
+        } else {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+
+        }
+        return flag;
+    }
+</script>
+</body>
+</html>
